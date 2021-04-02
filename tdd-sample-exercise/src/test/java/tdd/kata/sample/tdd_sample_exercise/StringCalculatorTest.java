@@ -49,5 +49,17 @@ public class StringCalculatorTest
 		int sum = add("1\n2,3");
 		assertEquals(6, sum);
 	}
+	
+	@Test
+	public void addNumbersSeparatedByDiffDelimiters(){
+		int sum = add("//;\n1;2");
+		assertEquals(3, sum);
+	}
+	
+	@Test
+	public void addNumbersSeparatedByDiffDelimitersWithNewLine(){
+		int sum = add("//;\n1\n2;3");
+		assertEquals(6, sum);
+	}
 
 }
