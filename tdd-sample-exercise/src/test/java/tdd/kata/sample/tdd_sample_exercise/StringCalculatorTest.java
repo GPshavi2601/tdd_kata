@@ -1,38 +1,35 @@
 package tdd.kata.sample.tdd_sample_exercise;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static tdd.kata.sample.tdd_sample_exercise.StringCalculator.add;
 
 /**
- * Unit test for simple App.
+ * Unit test for String Calculator
  */
-public class StringCalculatorTest 
-    extends TestCase
+public class StringCalculatorTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public StringCalculatorTest( String testName )
+	
+	@Test
+    void addTestEmptyString()
     {
-        super( testName );
+		int sum = add("");
+		assertEquals(0, sum);
+    }
+	
+	@Test
+    void addTestOneNumber()
+    {
+		int sum = add("1");
+		assertEquals(1, sum);
+    }
+	
+	@Test
+    void addTestTwoNumbers()
+    {
+		int sum = add("1,2");
+		assertEquals(3, sum);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( StringCalculatorTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
