@@ -10,13 +10,14 @@ public class StringCalculator {
 	 * Method to add numbers
 	 */
 	static int add(String numbers) {
-		String[] numberArray = numbers.split(",");
-		if (numberArray.length == 2)
-			return Integer.parseInt(numberArray[0]) + Integer.parseInt(numberArray[1]);
-		else if (numberArray.length == 1 && !numberArray[0].equals(""))
-			return Integer.parseInt(numberArray[0]);
-		else
+		int sum=0;
+		if(numbers.isEmpty()){
 			return 0;
+		}
+		for(String number : numbers.split(",")){
+			sum+=Integer.parseInt(number);
+		}
+		return sum;
 	}
 
 }
