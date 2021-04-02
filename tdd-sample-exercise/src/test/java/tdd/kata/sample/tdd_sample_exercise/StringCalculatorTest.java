@@ -43,5 +43,11 @@ public class StringCalculatorTest
 		int sum = add("1,2,3,4,5,6,7,8,9,10");
 		assertEquals(55, sum);
 	}
+	
+	@Test
+	public void addNumbersSeparatedByNewlineAndComma(){
+		int sum = add("1\n2,3");
+		assertEquals(6, sum);
+	}
 
 }
