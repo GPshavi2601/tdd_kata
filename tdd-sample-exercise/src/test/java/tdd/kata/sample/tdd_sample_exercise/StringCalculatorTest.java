@@ -81,6 +81,24 @@ public class StringCalculatorTest {
 		}
 		assertEquals("negatives not allowed :-3 -5 -10 ", exceptionMessage);
 	}
+	
+	@Test
+	public void addTestNumbersLessThanThousand() throws InvalidDataException {
+		int sum = add("//;\n1\n2;3;999");
+		assertEquals(1005, sum);
+	}
+	
+	@Test
+	public void addTestAtLeastOneNumberIsThousand() throws InvalidDataException {
+		int sum = add("//;\n1\n2;3;1000");
+		assertEquals(1006, sum);
+	}
+	
+	@Test
+	public void addTestNumbersMoreThanThousand() throws InvalidDataException {
+		int sum = add("//;\n1\n2;3;1001;10001");
+		assertEquals(6, sum);
+	}
 
 
 }
