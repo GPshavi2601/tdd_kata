@@ -37,7 +37,7 @@ public class StringCalculator {
 				String[] delimitters = splitString[0].split("\\[");
 				/* Building regex for multiple delimitters */
 				for (int i = 1; i < delimitters.length; i++) {
-					delimitter = delimitter
+					delimitter
 							.append(new StringBuilder(
 									Arrays.asList(delimitters[i].substring(0, delimitters[i].length() - 1).split(""))
 											.stream().map(x -> x.replace(x, "\\" + x)).collect(Collectors.joining())))
