@@ -128,5 +128,24 @@ public class StringCalculatorTest {
 		int sum = add("//[*][%]\n1*2%3");
 		assertEquals(6, sum);
 	}
+	
+	@Test
+	public void addTestMultipleDelimittersWithMultipleLengthFirst() throws InvalidDataException {
+		int sum = add("//[***][%%%]\n5***10%%%33***4%%%6%%%9***1***4");
+		assertEquals(72, sum);
+	}
+	
+	@Test
+	public void addTestMultipleDelimittersWithMultipleLengthSecond() throws InvalidDataException {
+		int sum = add("//[***][%%%]\n5***100%%%33\n4");
+		assertEquals(142, sum);
+	}
+	
+	
+	@Test
+	public void addTestMultipleDelimittersWithMultipleLengthThird() throws InvalidDataException {
+		int sum = add("//[***][%%%]\n5***1001%%%33\n4***4%%%6%%%9***1***4");
+		assertEquals(66, sum);
+	}
 
 }
