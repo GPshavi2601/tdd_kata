@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static tdd.kata.sample.tdd_sample_exercise.StringCalculator.add;
 
 /**
- * Unit test for String Calculator
+ * Unit tests for String Calculator
  */
 public class StringCalculatorTest {
 
@@ -121,6 +121,12 @@ public class StringCalculatorTest {
 			exceptionMessage = e.getMessage();
 		}
 		assertEquals("Invalid pattern", exceptionMessage);
+	}
+
+	@Test
+	public void addTestMultipleDelimitters() throws InvalidDataException {
+		int sum = add("//[*][%]\n1*2%3");
+		assertEquals(6, sum);
 	}
 
 }
